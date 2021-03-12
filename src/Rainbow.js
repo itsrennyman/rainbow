@@ -15,15 +15,19 @@ const cleanColors = (palette, exclude) =>
       return obj
     }, {})
 
-export const Rainbow = ({ palette = null, exclude = [] }) => {
-  const [colors, setColors] = useState(
-    cleanColors(palette ? palette : defaultPalette, exclude)
-  )
+export const Rainbow = ({
+  palette = null,
+  exclude = [],
+  onColorSelected = null
+}) => {
+  const colors = cleanColors(palette ? palette : defaultPalette, exclude)
   const [selectedColor, setSelectedColor] = useState(false)
 
-  const draw = (color, selected) => {
+  const draw = ({ color, selected = null, hex = null }) => {
     if (selectedColor) {
-      navigator.clipboard.writeText(selected)
+      if (onColorSelected) {
+        onColorSelected({ color: selected, hex: hex })
+      }
     } else {
       setSelectedColor({ [color]: colors[color] })
     }
@@ -34,7 +38,9 @@ export const Rainbow = ({ palette = null, exclude = [] }) => {
   const DetailedTilesList = () => (
     <TilesContainer>
       {Object.keys(selectedColor).map((color) =>
-        Object.keys(selectedColor[color]).map((colorScale, hex) => {
+        Object.keys(selectedColor[color]).map((colorScale, index) => {
+          const hex = selectedColor[color][colorScale]
+
           if (colorScale === '900') {
             return (
               <Bow
@@ -66,7 +72,7 @@ export const Rainbow = ({ palette = null, exclude = [] }) => {
               key={hex}
               bgColor={humanize(color, colorScale)}
               borderColor={humanize(color, 500)}
-              handleClick={({ selected }) => draw(color, selected)}
+              handleClick={({ selected }) => draw({ color, selected, hex })}
             />
           )
         })
@@ -87,7 +93,7 @@ export const Rainbow = ({ palette = null, exclude = [] }) => {
               key={hex}
               bgColor={humanize(color, colorScale)}
               borderColor={humanize(color, 500)}
-              handleClick={() => draw(color)}
+              handleClick={() => draw({ color })}
             />
           )
         })
