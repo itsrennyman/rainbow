@@ -23,5 +23,5 @@ export default {
       presets: ["@babel/preset-env", "@babel/preset-react"],
     }),
   ],
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "framer-motion", "tailwindcss"],
 };

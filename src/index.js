@@ -1,6 +1,6 @@
-import React from "react";
-import { Rainbow } from "./Rainbow";
+import React from 'react'
+import { Rainbow } from './Rainbow'
 
-import "./tailwind.css";
+import './styles/tailwind.css'
 
-export default Rainbow;
+export default Rainbow

@@ -2,11 +2,14 @@
   "name": "@itsrennyman/rainbow",
   "version": "0.1.2",
   "description": "fff",
-  "main": "index.js",
+  "main": "dist/output.js",
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist/output.js"
+  ],
   "keywords": [
     "fff",
     "ef",
@@ -29,7 +32,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "framer-motion": "^3.10.3"
   },
   "dependencies": {}
 }
