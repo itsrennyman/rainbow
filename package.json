@@ -1,7 +1,7 @@
 {
   "name": "@itsrennyman/rainbow",
   "version": "0.1.2",
-  "description": "fff",
+  "description": "Beautiful Color Picker, designed for Humans.",
   "main": "dist/output.js",
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
@@ -10,14 +10,18 @@
   "files": [
     "dist/output.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsrennyman/rainbow"
+  },
   "keywords": [
-    "fff",
-    "ef",
-    "wfwf",
-    "few"
+    "tailwindcss",
+    "color",
+    "picker",
+    "react"
   ],
-  "author": "REnaf sdfsdf",
-  "license": "ISC",
+  "author": "Renato Pozzi",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
