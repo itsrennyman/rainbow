@@ -14,19 +14,7 @@ You can use Rainbow with _zero configuration_.
 import Rainbow from '@itsrennyman/rainbow'
 
 function App() {
-  return (
-    <Rainbow
-      exclude={[
-        'trueGray',
-        'blueGray',
-        'coolGray',
-        'warmGray',
-        'orange',
-        'rose'
-      ]}
-      onColorSelected={(color) => console.log('Color', color)}
-    />
-  )
+  return <Rainbow />
 }
 
 export default App
